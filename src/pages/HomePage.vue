@@ -1,16 +1,15 @@
 <script>
-  export default {
-    data(){
-      return{
-        
-      }
+export default {
+    data() {
+        return {
+
+        }
     }
-  }
+}
 </script>
 
 <template>
     <h1>ciao</h1>
 </template>
 
-<style scoped lang="scss"> 
-</style>
+<style scoped lang="scss"></style>
