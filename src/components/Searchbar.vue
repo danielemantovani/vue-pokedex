@@ -13,7 +13,7 @@ export default {
     methods: {
         searchPokemon() {
             axios
-                .get(`https://pokeapi.co/api/v2/pokemon/${this.searchQuery.toLowerCase()}`)
+                .get(`https://pokeapi.co/api/v2/pokemon/${this.searchQuery.toLowerCase().trim()}`)
                 .then((response) => {
                     console.log(response.data);
                 })
@@ -29,7 +29,11 @@ export default {
 
 <template>
     <div>
-        <input type="text" v-model="searchQuery" placeholder="Inserisci il nome del Pokèmon che vuoi cercare" />
+        <input 
+            type="text" 
+            v-model="searchQuery" 
+            @keyup.enter="searchPokemon"
+            placeholder="Inserisci il nome del Pokèmon che vuoi cercare"/>
         <button @click="searchPokemon">Cerca</button>
     </div>
 
