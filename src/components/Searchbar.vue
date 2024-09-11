@@ -1,13 +1,6 @@
 <script>
-import Searchbar from '../components/Searchbar.vue';
-
 export default {
-    components: {
-        Searchbar,
-    },
-    
     data() {
-
         return {
 
         }
@@ -16,8 +9,8 @@ export default {
 </script>
 
 <template>
-    <Searchbar />
-    <h1>ciao</h1>
+    <input type="text" name="" id="">
+    <div>hola</div>
 </template>
 
 <style scoped lang="scss">
