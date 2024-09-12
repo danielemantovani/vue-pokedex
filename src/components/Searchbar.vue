@@ -16,6 +16,7 @@ export default {
                 .get(`https://pokeapi.co/api/v2/pokemon/${this.searchQuery.toLowerCase().trim()}`)
                 .then((response) => {
                     console.log(response.data);
+                    this.$emit('pokemon-found', response.data);
                 })
 
                 .catch((error) => {
