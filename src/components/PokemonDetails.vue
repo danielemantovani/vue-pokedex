@@ -4,18 +4,28 @@
 export default {
     props: {
         pokemon: {
-            type: Object,   //  La prop `pokemon` deve essere un oggetto
-            
-        }
+            type: Object,   //  La prop Pokemon deve essere un oggetto
+        },
+        onSave: {
+            type: Function, // Funzione che viene passata dal genitore per salvare il Pokémon
+        },
     },
 
-    data() {
+        data() {
 
-        return {
+            return {
+
+            }
+        },
+        methods: {
+
+            onSaveClick() {
+                this.onSave(); // Chiama la funzione passata dal genitore
+                console.log('Salva');
+            }
 
         }
     }
-}
 </script>
 
 <template>
@@ -23,12 +33,13 @@ export default {
         <div v-if="!pokemon">Nessun Pokémon selezionato</div>
         <div v-else>
             <h2>{{ pokemon.name }}</h2>
-            <p>Altezza: {{ pokemon.height }}</p>
-            <p>Peso: {{ pokemon.weight }}</p>
+            <p>Altezza: {{ pokemon.height }} pollici</p>
+            <p>Peso: {{ pokemon.weight }} libre</p>
         </div>
     </div>
     <div>
-        <button>Salva Pokèmon</button>
+        <!-- Pulsante per salvare il Pokémon -->
+        <button @click="onSaveClick">Salva Pokémon</button>
     </div>
 
 </template>
