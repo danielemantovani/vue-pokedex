@@ -9,19 +9,33 @@ export default {
 
         return {
         }
+    },
+
+    methods: {
+        removePokemon() {
+            console.log('Cancella');
+
+        }
     }
 }
 </script>
 
 <template>
 
-    <h3>Pokémon salvati</h3>
-    <ul>
-        <li v-for="pokemon in savedPokemon">
-            {{ pokemon.name }}
-        </li>
-    </ul>
+    <div>
+        <h3>Pokémon salvati</h3>
+        <ul>
+            <li v-for="pokemon in savedPokemon">
+                <span>{{ pokemon.name }}</span> <button type="button" @click="removePokemon"><i class="fa-solid fa-xmark"></i></button>
+            </li>
+        </ul>
+    </div>
+
 
 </template>
 
-<style lang="scss"></style>
+<style scoped lang="scss">
+li {
+    list-style-type: none;
+}
+</style>

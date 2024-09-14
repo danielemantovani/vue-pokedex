@@ -37,14 +37,20 @@ export default {
 
 <template>
 
-    <div class="text-center mt-5">
-        <Searchbar @pokemon-found="onPokemonFound" />
-        <PokemonDetails :pokemon="selectedPokemon" :onSave="savePokemon" />
-        <PokemonSaved :savedPokemon="savedPokemon" />
+    <div class="container_pokedex d-flex justify-content-center align-items-center">
+        <div class="me-5">
+            <Searchbar @pokemon-found="onPokemonFound" />
+            <PokemonDetails :pokemon="selectedPokemon" :onSave="savePokemon" />
+        </div>
+        <div class="">
+            <PokemonSaved :savedPokemon="savedPokemon" />
+        </div>
     </div>
 
 </template>
 
 <style scoped lang="scss">
-
+    .container_pokedex{
+        height: 100vh;
+    }
 </style>

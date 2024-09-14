@@ -34,7 +34,7 @@ export default {
         <div v-else>
             <h2>{{ pokemon.name }}</h2>
             <p>Altezza: {{ pokemon.height }} pollici</p>
-            <p>Peso: {{ pokemon.weight }} libre</p>
+            <p>Peso: {{ pokemon.weight }} libbre</p>
         </div>
     </div>
     <div>
